@@ -1,7 +1,7 @@
 ---
 name: "First Workflow for this repo."
 
-run-name: "first work flow triggered by ${{github.actor}} with event name: ${{github.event_name}} on branch ${{github.branch_name}}."
+run-name: "first work flow triggered by ${{github.actor}} with event name: ${{github.event_name}} on branch ${{github.head_ref}}."
 on: 
   push:
     branches:
