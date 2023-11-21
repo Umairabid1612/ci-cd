@@ -3,8 +3,8 @@
 on: 
   - push
 jobs:
-    first_job:
-      runs-on: ubuntu/latest
-      setps:
+    first-job:
+      runs-on: ubuntu-latest
+      steps:
         - uses: actions/checkout@4
-        - runs: cat hello.txt
+        - run: cat hello.txt
