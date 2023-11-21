@@ -1,7 +1,15 @@
 ---
+name: "First Workflow for this repo."
 
+run-name: "first work flow triggered by ${{github.actor}} with event name: ${{github.event_name}} on branch ${{github.repository}}."
 on: 
-  - push
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 jobs:
     first-job:
       runs-on: ubuntu-latest
