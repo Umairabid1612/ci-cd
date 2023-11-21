@@ -1,7 +1,7 @@
 ---
-name: "First Workflow for this repo."
-
-run-name: "first work flow triggered by ${{github.actor}} with event name: ${{github.event_name}} on branch ${{github.ref}}."
+name: First Workflow for this repo.
+run-name: "first work flow triggered by ${{github.actor}} with event name:
+  ${{github.event_name}} on branch ${{github.ref}}."
 on:
   push:
     branches:
@@ -9,33 +9,23 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
+  workflow_dispatch: null
 jobs:
-
   first-job:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Checking out to a repository
         uses: actions/checkout@v4
-
       - name: Printing the content of the file
         run: cat firstfile.txt
-
       - name: Eexecuting script
         run: bash a-simple-script.sh
-
   second-job:
     if: ${{ github.event_name == 'pull_request'  }}
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Installing php7
-
         uses: shivammathur/setup-php@v2
-
         with:
           php-version: "7.3"
       - name: Installing nodejs
@@ -44,8 +34,10 @@ jobs:
           node-version: "17"
       - name: Checking the versions of php and nodejs
         run: |
-
+          
           php --version
 
           node --version
+
 ---
+null
