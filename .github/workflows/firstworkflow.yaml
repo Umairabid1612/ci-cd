@@ -1,0 +1,10 @@
+---
+
+on: 
+  - push
+jobs:
+    first_job:
+      runs-on: ubuntu/latest
+      setps:
+        - uses: actions/checkout@4
+        - runs: cat hello.txt
